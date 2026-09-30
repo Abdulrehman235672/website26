@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact High Peak Sports in Sialkot for custom patches, goalkeeper gloves, and sportswear manufacturing inquiries.">
+    <title>Contact Us — High Peak Sports</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-section {
+            padding: 120px 20px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .contact-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .contact-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-top: 10px;
+        }
+        .contact-header h1 span {
+            color: #ff3b00;
+        }
+        .contact-form-box {
+            background: #121212;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            padding: 10px;
+            color: #888;
+            cursor: pointer;
+        }
+        .form-group input[type="file"]::file-selector-button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 15px;
+            transition: background 0.2s;
+        }
+        .form-group input[type="file"]::file-selector-button:hover {
+            background: #ff3b00;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ff3b00;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #ff3b00;
+            color: #fff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+        @media(max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .contact-form-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body id="home">
+
+<!-- ================= HEADER ================= -->
+<!-- HEADER -->
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="logo">
+            <img src="C:\Users\Vyre Industries\Videos\highpeak-website\assets\logo.png" alt="HighPeak Logo">
+        </a>
+        <div class="nav-links">
+            <a href="index.html#products">Products</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#about">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-button">
+            Get a Quote <span>&#8599;</span>
+        </a>
+        <button class="menu-button">&#9776;</button>
+    </nav>
+</header>
+
+
+
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#about">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+    
+
+<!-- ================= CONTACT SECTION ================= -->
+<main class="contact-section">
+    <div class="contact-header">
+        <div class="section-label">GET IN TOUCH</div>
+        <h1>CONTACT <span>US.</span></h1>
+        <p style="color: #888; margin-top: 10px;">Fill out the details below to request a quote or attach your artwork.</p>
+        
+        <!-- Direct Contact Display -->
+        <div style="margin-top: 15px; color: #aaa; font-size: 0.95rem;">
+            Direct Email: <a href="mailto:info@highpeaksports.us" style="color: #ff3b00; text-decoration: none; font-weight: bold;">info@highpeaksports.us</a> &nbsp;|&nbsp; 
+            Location: Sialkot, Pakistan
+        </div>
+    </div>
+
+    <!-- Web3Forms Integration with File Upload Support -->
+    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="contact-form-box">
+
+        <!-- Access Key -->
+        <input type="hidden" name="access_key" value="23a0b2a2-54be-4db2-b0a2-9454a3c5fe78">
+        
+        <!-- Subject Line -->
+        <input type="hidden" name="subject" value="New Inquiry & Artwork from High Peak Sports Website">
+        
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div class="form-grid">
+            
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="clientName">Your Name *</label>
+                <input type="text" id="clientName" name="name" required placeholder="e.g. Alex Morgan">
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="clientEmail">Email Address *</label>
+                <input type="email" id="clientEmail" name="email" required placeholder="e.g. alex@brand.com">
+            </div>
+
+            <!-- Brand / Company Name -->
+            <div class="form-group">
+                <label for="brandName">Brand / Club Name</label>
+                <input type="text" id="brandName" name="brand" placeholder="e.g. Vyre Athletics">
+            </div>
+
+            <!-- Product Category -->
+            <div class="form-group">
+                <label for="productType">Product / Inquiry Type *</label>
+                <select id="productType" name="product" required>
+                    <option value="" disabled selected>Select a subject...</option>
+                    <option value="Custom PVC Patches">Custom PVC Patches</option>
+                    <option value="Goalkeeper Gloves">Goalkeeper Gloves</option>
+                    <option value="Sportswear / Teamwear">Sportswear / Teamwear</option>
+                    <option value="Private Label Manufacturing">Private Label Manufacturing</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                </select>
+            </div>
+
+            <!-- Estimated Quantity -->
+            <div class="form-group">
+                <label for="quantity">Estimated Quantity (Optional)</label>
+                <input type="text" id="quantity" name="quantity" placeholder="e.g. 100 pieces">
+            </div>
+
+            <!-- Artwork Upload Field -->
+            <div class="form-group">
+                <label for="artwork">Upload Artwork / Tech Pack (Optional)</label>
+                <input type="file" id="artwork" name="attachment" accept=".ai,.pdf,.png,.jpg,.jpeg,.zip,.rar">
+            </div>
+
+            <!-- Detailed Specifications -->
+            <div class="form-group full-width">
+                <label for="details">Your Message / Project Details *</label>
+                <textarea id="details" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group full-width" style="margin-bottom: 0;">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Send Inquiry & Files ↗
+                </button>
+            </div>
+
+        </div>
+    </form>
+</main>
+
+
+<script src="script.js"></script>
+
+
+
+
+</body>
+</html>
