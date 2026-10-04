@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="preload" fetchpriority="high" as="image" href="assets/hero.jpg" type="image/jpeg">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -100,6 +103,8 @@
 </head>
 
 <body id="home">
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; z-index: 999; padding: 8px; background: #b6fb04; color: #0d1117;">Skip to main content</a>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -902,14 +907,15 @@
       <!-- Column 1: Brand Info & Stay in the know -->
       <div class="footer-col footer-brand-col">
         <div class="footer-logo">
-         <img src="assets/logo.png" alt="High Peak Sports Logo" style="width: 90px; height: auto;" width="90" height="30">
+         <img src="assets/logo.png" alt="High Peak Sports Logo" style="width: 90px; height: auto;" width="90" height="30" loading="lazy">
         </div>
         <h3 class="footer-heading">Stay in the know</h3>
         <p class="newsletter-desc">
           Subscribe now for exclusive offers, latest product updates, and industry tips straight to your inbox!
         </p>
         <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-          <input type="email" placeholder="Enter your e-mail" required class="newsletter-input">
+          <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your e-mail" aria-label="Email Address">
+          <label for="newsletter-email" style="display: none;">Email Address</label>
           <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
         </form>
       </div>
