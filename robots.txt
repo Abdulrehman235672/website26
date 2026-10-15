@@ -6,12 +6,14 @@ Allow: /
 Disallow: /admin/
 Disallow: /assets/
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /?*
 Disallow: /search
 Disallow: /cart
 Disallow: /checkout
 Disallow: /account
+
+# Allow sitemap explicitly
+Allow: /sitemap.xml$
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 10
