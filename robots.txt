@@ -1,0 +1,23 @@
+# High Peak Sports - Robots.txt
+User-agent: *
+Allow: /
+
+# Disallow admin, private, and non-SEO paths
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /?*
+Disallow: /search
+Disallow: /cart
+Disallow: /checkout
+Disallow: /account
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://highpeaksports.us/sitemap.xml
+
+# Host directive
+Host: https://highpeaksports.us

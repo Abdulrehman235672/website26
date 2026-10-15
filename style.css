@@ -1672,3 +1672,38 @@ button {
 .close-menu:hover {
     color: var(--green);
 }
+
+
+
+
+
+.product-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: var(--green);
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    transition: opacity 0.2s ease;
+}
+
+.product-cta-btn:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+.glove-hero-img {
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: #111311;
+}
