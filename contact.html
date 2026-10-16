@@ -299,16 +299,18 @@
                 <textarea id="details" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
             </div>
 
-            <!-- Submit Button -->
-            <div class="form-group full-width" style="margin-bottom: 0;">
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    Send Inquiry & Files ↗
-                </button>
-            </div>
-
-        </div>
-    </form>
-</main>
+<!-- Submit Button -->
+             <div class="form-group full-width" style="margin-bottom: 0;">
+                 <button type="submit" class="submit-btn" id="submitBtn">
+                     Send Inquiry & Files &#8599;
+                 </button>
+             </div>
+         </div>
+     </form>
+     <div id="formResponse" style="margin-top:20px; text-align:center; color:#4CAF50; font-weight:600; display:none;">
+         Thank you! Your inquiry has been sent.
+     </div>
+ </main>
 
 <!-- ================= FOOTER ================= -->
 
@@ -432,6 +434,73 @@
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenu.classList.remove('active');
     }
+</script>
+
+<!-- Custom Form Submission Handler -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('.contact-form-box');
+        const responseDiv = document.getElementById('formResponse');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+                // Disable button during submit
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                // Gather input values
+                const name = form.elements.namedItem('name')?.value.trim() || '';
+                const email = form.elements.namedItem('email')?.value.trim() || '';
+                const product = form.elements.namedItem('product')?.value.trim() || '';
+                const quantity = form.elements.namedItem('quantity')?.value.trim() || '';
+                const message = form.elements.namedItem('message')?.value.trim() || '';
+
+                // Build JSON object
+                const data = {
+                    name: name,
+                    email: email,
+                    product: product,
+                    quantity: quantity,
+                    message: message
+                };
+
+                // Send POST request to Google Apps Script endpoint
+                fetch('https://script.google.com/macros/s/AKfycbzSuQQknq5NsKZZzYTPt-yTUZTMHwXV7lKE8GHxYSbiCXJGgUNADU3PdFG89AZouHaz0w/exec', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(result => {
+                    // Show success message
+                    responseDiv.style.display = 'block';
+                    // Reset form
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    responseDiv.textContent = 'Failed to send. Please try again.';
+                    responseDiv.style.display = 'block';
+                    responseDiv.style.color = '#f44336';
+                })
+                .finally(() => {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Inquiry & Files &#8599;';
+                });
+            });
+        }
+    });
 </script>
 </body>
 </html>
