@@ -252,14 +252,14 @@
             
             <!-- Full Name -->
             <div class="form-group">
-                <label for="clientName">Your Name *</label>
-                <input type="text" id="clientName" name="name" required placeholder="e.g. Alex Morgan">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. Alex Morgan">
             </div>
 
             <!-- Email Address -->
             <div class="form-group">
-                <label for="clientEmail">Email Address *</label>
-                <input type="email" id="clientEmail" name="email" required placeholder="e.g. alex@brand.com">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="e.g. alex@brand.com">
             </div>
 
             <!-- Brand / Company Name -->
@@ -270,8 +270,8 @@
 
             <!-- Product Category -->
             <div class="form-group">
-                <label for="productType">Product / Inquiry Type *</label>
-                <select id="productType" name="product" required>
+                <label for="product">Product / Inquiry Type *</label>
+                <select id="product" name="product" required>
                     <option value="" disabled selected>Select a subject...</option>
                     <option value="Custom PVC Patches">Custom PVC Patches</option>
                     <option value="Goalkeeper Gloves">Goalkeeper Gloves</option>
@@ -295,8 +295,8 @@
 
             <!-- Detailed Specifications -->
             <div class="form-group full-width">
-                <label for="details">Your Message / Project Details *</label>
-                <textarea id="details" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
+                <label for="message">Your Message / Project Details *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
             </div>
 
 <!-- Submit Button -->
@@ -436,70 +436,34 @@
     }
 </script>
 
-<!-- Custom Form Submission Handler -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('.contact-form-box');
-        const responseDiv = document.getElementById('formResponse');
-        const submitBtn = document.getElementById('submitBtn');
+    document.querySelector('.contact-form-box').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = {
+          name: document.querySelector('#name').value,
+          email: document.querySelector('#email').value,
+          product: document.querySelector('#product').value,
+          quantity: document.querySelector('#quantity').value,
+          message: document.querySelector('#message').value
+        };
 
-        if (form) {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault(); // Prevent default form submission
-
-                // Disable button during submit
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-
-                // Gather input values
-                const name = form.elements.namedItem('name')?.value.trim() || '';
-                const email = form.elements.namedItem('email')?.value.trim() || '';
-                const product = form.elements.namedItem('product')?.value.trim() || '';
-                const quantity = form.elements.namedItem('quantity')?.value.trim() || '';
-                const message = form.elements.namedItem('message')?.value.trim() || '';
-
-                // Build JSON object
-                const data = {
-                    name: name,
-                    email: email,
-                    product: product,
-                    quantity: quantity,
-                    message: message
-                };
-
-                // Send POST request to Google Apps Script endpoint
-                fetch('https://script.google.com/macros/s/AKfycbzSuQQknq5NsKZZzYTPt-yTUZTMHwXV7lKE8GHxYSbiCXJGgUNADU3PdFG89AZouHaz0w/exec', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'text/plain;charset=utf-8'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(result => {
-                    // Show success message
-                    responseDiv.style.display = 'block';
-                    // Reset form
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    responseDiv.textContent = 'Failed to send. Please try again.';
-                    responseDiv.style.display = 'block';
-                    responseDiv.style.color = '#f44336';
-                })
-                .finally(() => {
-                    // Re-enable button
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Inquiry & Files &#8599;';
-                });
-            });
-        }
+        fetch('https://hook.eu1.make.com/jecfldovwh1h801td1bmtjxct9ss2om6', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Quote submitted successfully!');
+            this.reset();
+          } else {
+            alert('Failed to submit. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error submitting quote:', error);
+          alert('Error submitting quote.');
+        });
     });
 </script>
 </body>
