@@ -236,77 +236,20 @@
         </div>
     </div>
 
-    <!-- Web3Forms Integration with File Upload Support -->
-    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="contact-form-box">
+<form name="contact" method="POST" data-netlify="true">
+  <!-- Hidden input required for Netlify forms -->
+  <input type="hidden" name="form-name" value="contact" />
 
-        <!-- Access Key -->
-        <input type="hidden" name="access_key" value="23a0b2a2-54be-4db2-b0a2-9454a3c5fe78">
-        
-        <!-- Subject Line -->
-        <input type="hidden" name="subject" value="New Inquiry & Artwork from High Peak Sports Website">
-        
-        <!-- Honeypot Spam Protection -->
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+  <!-- Your existing form fields -->
+  <input type="text" name="name" required placeholder="Your Name" />
+  <input type="email" name="email" required placeholder="Your Email" />
+  <input type="tel" name="phone" required placeholder="Phone Number" />
+  <input type="text" name="product" placeholder="Product (e.g. Patches, Gloves)" />
+  <input type="number" name="quantity" placeholder="Quantity" />
+  <textarea name="message" placeholder="Your Message"></textarea>
 
-        <div class="form-grid">
-            
-            <!-- Full Name -->
-            <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required placeholder="e.g. Alex Morgan">
-            </div>
-
-            <!-- Email Address -->
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="e.g. alex@brand.com">
-            </div>
-
-            <!-- Brand / Company Name -->
-            <div class="form-group">
-                <label for="brandName">Brand / Club Name</label>
-                <input type="text" id="brandName" name="brand" placeholder="e.g. Vyre Athletics">
-            </div>
-
-            <!-- Product Category -->
-            <div class="form-group">
-                <label for="product">Product / Inquiry Type *</label>
-                <select id="product" name="product" required>
-                    <option value="" disabled selected>Select a subject...</option>
-                    <option value="Custom PVC Patches">Custom PVC Patches</option>
-                    <option value="Goalkeeper Gloves">Goalkeeper Gloves</option>
-                    <option value="Sportswear / Teamwear">Sportswear / Teamwear</option>
-                    <option value="Private Label Manufacturing">Private Label Manufacturing</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                </select>
-            </div>
-
-            <!-- Estimated Quantity -->
-            <div class="form-group">
-                <label for="quantity">Estimated Quantity (Optional)</label>
-                <input type="text" id="quantity" name="quantity" placeholder="e.g. 100 pieces">
-            </div>
-
-            <!-- Artwork Upload Field -->
-            <div class="form-group">
-                <label for="artwork">Upload Artwork / Tech Pack (Optional)</label>
-                <input type="file" id="artwork" name="attachment" accept=".ai,.pdf,.png,.jpg,.jpeg,.zip,.rar">
-            </div>
-
-            <!-- Detailed Specifications -->
-            <div class="form-group full-width">
-                <label for="message">Your Message / Project Details *</label>
-                <textarea id="message" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
-            </div>
-
-<!-- Submit Button -->
-             <div class="form-group full-width" style="margin-bottom: 0;">
-                 <button type="submit" class="submit-btn" id="submitBtn">
-                     Send Inquiry & Files &#8599;
-                 </button>
-             </div>
-         </div>
-     </form>
+  <button type="submit">Submit Inquiry</button>
+</form>
      <div id="formResponse" style="margin-top:20px; text-align:center; color:#4CAF50; font-weight:600; display:none;">
          Thank you! Your inquiry has been sent.
      </div>
@@ -436,35 +379,5 @@
     }
 </script>
 
-<script>
-    document.querySelector('.contact-form-box').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = {
-          name: document.querySelector('#name').value,
-          email: document.querySelector('#email').value,
-          product: document.querySelector('#product').value,
-          quantity: document.querySelector('#quantity').value,
-          message: document.querySelector('#message').value
-        };
-
-        fetch('https://hook.eu1.make.com/jecfldovwh1h801td1bmtjxct9ss2om6', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
-        })
-        .then(response => {
-          if (response.ok) {
-            alert('Quote submitted successfully!');
-            this.reset();
-          } else {
-            alert('Failed to submit. Please try again.');
-          }
-        })
-        .catch(error => {
-          console.error('Error submitting quote:', error);
-          alert('Error submitting quote.');
-        });
-    });
-</script>
 </body>
 </html>
