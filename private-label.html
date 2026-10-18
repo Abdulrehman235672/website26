@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self' https://www.googletagmanager.com https://formsubmit.co;
+        frame-ancestors 'none';
+        form-action 'self' https://formsubmit.co;
+        base-uri 'self';
+        object-src 'none';
+    ">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTKECLM6LR"></script>
     <script>
@@ -283,6 +296,9 @@
     <!-- BOTTOM ROW: COPYRIGHT & PAYMENTS -->
     <div class="footer-bottom">
       <span>EN ▾ &nbsp; © <span data-year>2026</span> HighPeak Sports. All Rights Reserved.</span>
+      <span class="csp-notice">
+        <a href="#csp-policy" style="color: #888; font-size: 0.75rem; text-decoration: none; margin-left: 20px;">Content Security Policy</a>
+      </span>
 
       <!-- Payment Methods -->
       <div class="footer-payments">

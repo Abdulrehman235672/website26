@@ -29,6 +29,19 @@
 
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self' https://www.googletagmanager.com https://formsubmit.co;
+        frame-ancestors 'none';
+        form-action 'self' https://formsubmit.co;
+        base-uri 'self';
+        object-src 'none;
+    ">
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
@@ -205,7 +218,7 @@
 </div>
 
 <!-- ================= CONTACT SECTION ================= -->
-<main class="contact-section">
+<main class="contact-section" id="main-content">
     <div class="contact-header">
         <div class="section-label">GET IN TOUCH</div>
         <h1>CONTACT <span>US.</span></h1>
@@ -218,63 +231,56 @@
         </div>
     </div>
 
-<form name="contact" method="POST" data-netlify="true" enctype="multipart/form-data" class="contact-form-box">
-  <!-- Hidden input required for Netlify forms -->
-  <input type="hidden" name="form-name" value="contact" />
+<form action="https://formsubmit.co/info@highpeaksports.us" method="POST" class="contact-form-box">
+  <!-- Replace YOUR_EMAIL_HERE with your actual email address (e.g., highpeaksports@gmail.com) -->
 
-  <!-- Your existing form fields -->
-  <div class="form-grid">
-    <!-- Full Name -->
-    <div class="form-group">
-      <label for="name">Your Name *</label>
-      <input type="text" id="name" name="name" required placeholder="Your Name" />
-    </div>
+  <!-- Anti-Spam Honeypot (Keeps spammers away invisibly) -->
+  <input type="text" name="_honey" style="display:none">
 
-    <!-- Email Address -->
-    <div class="form-group">
-      <label for="email">Email Address *</label>
-      <input type="email" id="email" name="email" required placeholder="Your Email" />
-    </div>
+  <!-- Prevents Recaptcha redirects if you want immediate submission -->
+  <input type="hidden" name="_captcha" value="false">
 
-    <!-- Phone Number -->
-    <div class="form-group">
-      <label for="phone">Phone Number *</label>
-      <input type="tel" id="phone" name="phone" required placeholder="Phone Number" />
-    </div>
+  <!-- Email Subject Line for Incoming Leads -->
+  <input type="hidden" name="_subject" value="New B2B Lead - High Peak Sports">
 
-    <!-- Product Category -->
-    <div class="form-group">
-      <label for="product">Product / Inquiry Type *</label>
-      <select id="product" name="product" required>
-        <option value="" disabled selected>Select a subject...</option>
-        <option value="Custom PVC Patches">Custom PVC Patches</option>
-        <option value="Goalkeeper Gloves">Goalkeeper Gloves</option>
-        <option value="Sportswear / Teamwear">Sportswear / Teamwear</option>
-        <option value="Private Label Manufacturing">Private Label Manufacturing</option>
-        <option value="General Inquiry">General Inquiry</option>
-      </select>
-    </div>
-
-    <!-- Estimated Quantity -->
-    <div class="form-group">
-      <label for="quantity">Estimated Quantity (Optional)</label>
-      <input type="number" id="quantity" name="quantity" placeholder="Quantity" />
-    </div>
-
-    <!-- Artwork Upload Field -->
-    <div class="form-group">
-      <label for="artwork">Upload Artwork / Tech Pack (Optional)</label>
-      <input type="file" id="artwork" name="artwork" accept=".ai,.pdf,.png,.jpg,.jpeg,.zip,.rar" />
-    </div>
-
-    <!-- Detailed Specifications -->
-    <div class="form-group full-width">
-      <label for="message">Your Message / Project Details *</label>
-      <textarea id="message" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
-    </div>
+  <!-- Form Fields -->
+  <div class="form-group">
+    <label for="name">Full Name *</label>
+    <input type="text" id="name" name="Name" required placeholder="John Doe">
   </div>
 
-  <button type="submit" class="submit-btn">Submit Inquiry</button>
+  <div class="form-group">
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="Email" required placeholder="name@company.com">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone / WhatsApp Number (Optional)</label>
+    <input type="tel" id="phone" name="Phone_WhatsApp" placeholder="+1 234 567 8900">
+  </div>
+
+  <div class="form-group">
+    <label for="product">Product Interest *</label>
+    <select id="product" name="Product_Type" required>
+      <option value="" disabled selected>Select Product</option>
+      <option value="Custom PVC Patches">Custom PVC Patches</option>
+      <option value="Embroidered Patches">Embroidered Patches</option>
+      <option value="Goalkeeper Gloves">Goalkeeper Gloves</option>
+      <option value="Sportswear / Apparel">Sportswear / Apparel</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Estimated Quantity (MOQ 25–30 pcs)</label>
+    <input type="number" id="quantity" name="Estimated_Quantity" placeholder="e.g. 50">
+  </div>
+
+  <div class="form-group">
+    <label for="message">Design & Order Requirements *</label>
+    <textarea id="message" name="Message" rows="5" required placeholder="Tell us about your patch size, colors, or glove backing requirements..."></textarea>
+  </div>
+
+  <button type="submit">Submit Quote Request</button>
 </form>
  </main>
 
@@ -355,6 +361,9 @@
     <!-- BOTTOM ROW: COPYRIGHT & PAYMENTS -->
     <div class="footer-bottom">
       <span>EN ▾ &nbsp; © <span data-year>2026</span> HighPeak Sports. All Rights Reserved.</span>
+      <span class="csp-notice">
+        <a href="#csp-policy" style="color: #888; font-size: 0.75rem; text-decoration: none; margin-left: 20px;">Content Security Policy</a>
+      </span>
 
       <!-- Payment Methods -->
       <div class="footer-payments">
