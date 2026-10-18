@@ -45,6 +45,42 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
+    <!-- ContactPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact HighPeakSports",
+      "description": "Contact HighPeakSports for custom manufacturing quotes.",
+      "url": "https://highpeaksports.us/contact.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "HighPeakSports",
+        "url": "https://highpeaksports.us",
+        "email": "info@highpeaksports.us",
+        "telephone": "+44 7830 759617",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sialkot",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        }
+      }
+    }
+    </script>
+    <!-- FAQ Schema for Contact Form -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How can I request a custom manufacturing quote?", "acceptedAnswer": {"@type": "Answer", "text": "Fill out the form on this page with your product details, quantity, and requirements. We'll respond within 24 hours."}},
+        {"@type": "Question", "name": "What information should I include in my quote request?", "acceptedAnswer": {"@type": "Answer", "text": "Include product type (patches, gloves, sportswear), estimated quantity, design files if available, and any specific requirements like colors, materials, or backing types."}},
+        {"@type": "Question", "name": "Do you offer free samples before bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "We provide pre-production samples for approval before bulk manufacturing. Sample costs may apply depending on complexity."}},
+        {"@type": "Question", "name": "What is the typical response time for quote requests?", "acceptedAnswer": {"@type": "Answer", "text": "We typically respond to quote requests within 24 hours during business days."}}
+      ]
+    }
+    </script>
 
     <style>
         .contact-section {
@@ -243,6 +279,9 @@
   <!-- Email Subject Line for Incoming Leads -->
   <input type="hidden" name="_subject" value="New B2B Lead - High Peak Sports">
 
+  <!-- Redirect after submission -->
+  <input type="hidden" name="_next" value="https://highpeaksports.us/thank-you.html">
+
   <!-- Form Fields -->
   <div class="form-group">
     <label for="name">Full Name *</label>
@@ -280,7 +319,10 @@
     <textarea id="message" name="Message" rows="5" required placeholder="Tell us about your patch size, colors, or glove backing requirements..."></textarea>
   </div>
 
-  <button type="submit">Submit Quote Request</button>
+  <button type="submit" class="submit-btn">
+    Submit Quote Request
+    <span>↗</span>
+  </button>
 </form>
  </main>
 

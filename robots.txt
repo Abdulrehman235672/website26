@@ -2,24 +2,18 @@
 User-agent: *
 Allow: /
 
-# Disallow admin, private, and non-SEO paths
+# Disallow non-SEO / private system paths
 Disallow: /admin/
-Disallow: /assets/
-Disallow: /*.json$
-Disallow: /?*
-Disallow: /search
 Disallow: /cart
 Disallow: /checkout
 Disallow: /account
 
-# Allow sitemap explicitly
-Allow: /sitemap.xml$
+# Allow AI Search Engine Crawlers (ChatGPT / Claude)
+User-agent: OAI-SearchBot
+Allow: /
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 10
+User-agent: ChatGPT-User
+Allow: /
 
-# Sitemap location
+# Sitemap Location
 Sitemap: https://highpeaksports.us/sitemap.xml
-
-# Host directive
-Host: https://highpeaksports.us

@@ -31,6 +31,53 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
     <link rel="stylesheet" href="../../style.css">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self' https://www.googletagmanager.com https://formsubmit.co;
+        frame-ancestors 'none';
+        form-action 'self' https://formsubmit.co;
+        base-uri 'self';
+        object-src 'none';
+    ">
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Custom PVC Patches",
+      "description": "Custom PVC patches with hook-and-loop backing, made to your design for brands, teams, businesses and organizations worldwide.",
+      "image": ["https://highpeaksports.us/assets/patches.webp", "https://highpeaksports.us/assets/patches1.webp", "https://highpeaksports.us/assets/patch1.jpg"],
+      "brand": {"@type": "Brand", "name": "HighPeakSports"},
+      "manufacturer": {"@type": "Organization", "name": "HighPeakSports", "url": "https://highpeaksports.us"},
+      "category": "Custom Patches",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {"@type": "Organization", "name": "HighPeakSports"}
+      }
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is the minimum order quantity for custom PVC patches?", "acceptedAnswer": {"@type": "Answer", "text": "Our typical MOQ for custom PVC patches is 25+ pieces, depending on design complexity and size."}},
+        {"@type": "Question", "name": "Do you offer 2D and 3D PVC patch options?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we manufacture both 2D (flat) and 3D (sculpted) custom PVC patches with multiple layer options."}},
+        {"@type": "Question", "name": "What backing options are available for PVC patches?", "acceptedAnswer": {"@type": "Answer", "text": "We offer hook-and-loop (Velcro), adhesive, sew-on, and pin backing options for all custom patches."}},
+        {"@type": "Question", "name": "Can you match specific Pantone colors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we provide custom Pantone color matching for all PVC patch orders."}},
+        {"@type": "Question", "name": "Do you ship worldwide from Pakistan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we ship globally via DHL, FedEx, UPS, and air/sea cargo from our Sialkot, Pakistan facility."}},
+        {"@type": "Question", "name": "What is the production timeline for custom patches?", "acceptedAnswer": {"@type": "Answer", "text": "Standard production takes 7-14 working days after artwork approval, plus shipping time."}}
+      ]
+    }
+    </script>
 
     <style>
 /* HighPeakSports generated product page */

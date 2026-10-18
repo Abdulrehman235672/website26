@@ -31,6 +31,53 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
     <link rel="stylesheet" href="../../style.css">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self' https://www.googletagmanager.com https://formsubmit.co;
+        frame-ancestors 'none';
+        form-action 'self' https://formsubmit.co;
+        base-uri 'self';
+        object-src 'none';
+    ">
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Custom Sportswear",
+      "description": "Custom sportswear manufactured for teams, brands and businesses with private-label customization options.",
+      "image": ["https://highpeaksports.us/assets/Hoodie.webp", "https://highpeaksports.us/assets/Tee.webp", "https://highpeaksports.us/assets/Shorts.webp"],
+      "brand": {"@type": "Brand", "name": "HighPeakSports"},
+      "manufacturer": {"@type": "Organization", "name": "HighPeakSports", "url": "https://highpeaksports.us"},
+      "category": "Sportswear",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {"@type": "Organization", "name": "HighPeakSports"}
+      }
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is the minimum order quantity for custom sportswear?", "acceptedAnswer": {"@type": "Answer", "text": "Our typical MOQ for custom sportswear is 50+ pieces per design, with flexibility for team orders."}},
+        {"@type": "Question", "name": "What fabric options do you offer for custom sportswear?", "acceptedAnswer": {"@type": "Answer", "text": "We offer performance polyester, mesh, interlock, fleece, and technical blends suitable for sublimation and embroidery."}},
+        {"@type": "Question", "name": "Can you do full sublimation printing on sportswear?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we specialize in full sublimation (all-over print) with unlimited colors, gradients, and photo-realistic designs."}},
+        {"@type": "Question", "name": "Do you offer private label manufacturing for sportswear brands?", "acceptedAnswer": {"@type": "Answer", "text": "Full private label service including custom neck labels, hang tags, packaging, and branded polybags."}},
+        {"@type": "Question", "name": "What is the production timeline for custom sportswear?", "acceptedAnswer": {"@type": "Answer", "text": "Standard production takes 10-18 working days after artwork and size chart approval, plus shipping."}},
+        {"@type": "Question", "name": "Do you ship custom sportswear worldwide?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we ship globally via DHL, FedEx, UPS, and sea freight for bulk orders from Sialkot, Pakistan."}}
+      ]
+    }
+    </script>
 
     <style>
 /* HighPeakSports generated product page */
