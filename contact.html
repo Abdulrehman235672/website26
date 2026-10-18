@@ -203,24 +203,6 @@
     </button>
 
 </div>
-        <a href="contact.html" class="nav-button">
-            Get a Quote <span>&#8599;</span>
-        </a>
-        <button class="menu-button">&#9776;</button>
-    </nav>
-</header>
-
-
-
-<div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenu">&times;</button>
-    <a href="index.html#products">Products</a>
-    <a href="index.html#process">Process</a>
-    <a href="index.html#about">About</a>
-    <a href="contact.html">Contact</a>
-</div>
-
-    
 
 <!-- ================= CONTACT SECTION ================= -->
 <main class="contact-section">
@@ -236,23 +218,64 @@
         </div>
     </div>
 
-<form name="contact" method="POST" data-netlify="true">
+<form name="contact" method="POST" data-netlify="true" enctype="multipart/form-data" class="contact-form-box">
   <!-- Hidden input required for Netlify forms -->
   <input type="hidden" name="form-name" value="contact" />
 
   <!-- Your existing form fields -->
-  <input type="text" name="name" required placeholder="Your Name" />
-  <input type="email" name="email" required placeholder="Your Email" />
-  <input type="tel" name="phone" required placeholder="Phone Number" />
-  <input type="text" name="product" placeholder="Product (e.g. Patches, Gloves)" />
-  <input type="number" name="quantity" placeholder="Quantity" />
-  <textarea name="message" placeholder="Your Message"></textarea>
+  <div class="form-grid">
+    <!-- Full Name -->
+    <div class="form-group">
+      <label for="name">Your Name *</label>
+      <input type="text" id="name" name="name" required placeholder="Your Name" />
+    </div>
 
-  <button type="submit">Submit Inquiry</button>
+    <!-- Email Address -->
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required placeholder="Your Email" />
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required placeholder="Phone Number" />
+    </div>
+
+    <!-- Product Category -->
+    <div class="form-group">
+      <label for="product">Product / Inquiry Type *</label>
+      <select id="product" name="product" required>
+        <option value="" disabled selected>Select a subject...</option>
+        <option value="Custom PVC Patches">Custom PVC Patches</option>
+        <option value="Goalkeeper Gloves">Goalkeeper Gloves</option>
+        <option value="Sportswear / Teamwear">Sportswear / Teamwear</option>
+        <option value="Private Label Manufacturing">Private Label Manufacturing</option>
+        <option value="General Inquiry">General Inquiry</option>
+      </select>
+    </div>
+
+    <!-- Estimated Quantity -->
+    <div class="form-group">
+      <label for="quantity">Estimated Quantity (Optional)</label>
+      <input type="number" id="quantity" name="quantity" placeholder="Quantity" />
+    </div>
+
+    <!-- Artwork Upload Field -->
+    <div class="form-group">
+      <label for="artwork">Upload Artwork / Tech Pack (Optional)</label>
+      <input type="file" id="artwork" name="artwork" accept=".ai,.pdf,.png,.jpg,.jpeg,.zip,.rar" />
+    </div>
+
+    <!-- Detailed Specifications -->
+    <div class="form-group full-width">
+      <label for="message">Your Message / Project Details *</label>
+      <textarea id="message" name="message" required placeholder="Tell us about dimensions, colors, backing types, or specific construction requirements..."></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit Inquiry</button>
 </form>
-     <div id="formResponse" style="margin-top:20px; text-align:center; color:#4CAF50; font-weight:600; display:none;">
-         Thank you! Your inquiry has been sent.
-     </div>
  </main>
 
 <!-- ================= FOOTER ================= -->
