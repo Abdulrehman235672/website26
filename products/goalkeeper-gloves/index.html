@@ -44,25 +44,7 @@
         base-uri 'self';
         object-src 'none';
     ">
-    <!-- Product Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Custom Goalkeeper Gloves",
-      "description": "Custom goalkeeper gloves manufactured for brands, teams and private-label businesses worldwide.",
-      "image": ["https://highpeaksports.us/assets/Goalkeeper1.webp", "https://highpeaksports.us/assets/Goalkeeper2.webp", "https://highpeaksports.us/assets/Goalkeeper3.webp"],
-      "brand": {"@type": "Brand", "name": "HighPeakSports"},
-      "manufacturer": {"@type": "Organization", "name": "HighPeakSports", "url": "https://highpeaksports.us"},
-      "category": "Goalkeeper Gloves",
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": {"@type": "Organization", "name": "HighPeakSports"}
-      }
-    }
-    </script>
+    
     <!-- FAQ Schema -->
     <script type="application/ld+json">
     {
@@ -348,26 +330,27 @@
 </style>
 
     <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Goalkeeper Gloves",
-    "description": "Custom goalkeeper gloves manufactured for brands, teams and private-label businesses worldwide.",
-    "image": [
-        "https://highpeaksports.us/assets/goalkeeper.jpeg"
-    ],
-    "brand": {
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Custom Goalkeeper Gloves",
+      "image": [
+        "https://highpeaksports.us/assets/Goalkeeper1.webp",
+        "https://highpeaksports.us/assets/Goalkeeper2.webp",
+        "https://highpeaksports.us/assets/Goalkeeper3.webp"
+      ],
+      "description": "Custom goalkeeper gloves manufactured for brands, teams and private-label businesses worldwide.",
+      "brand": {
         "@type": "Brand",
         "name": "HighPeakSports"
-    },
-    "manufacturer": {
-        "@type": "Organization",
-        "name": "HighPeakSports",
-        "url": "https://highpeaksports.us"
-    },
-    "url": "https://highpeaksports.us/products/goalkeeper-gloves/"
-}
-    </script>
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://highpeaksports.us/products/goalkeeper-gloves/",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
 </head>
 
 <body id="product-page">
